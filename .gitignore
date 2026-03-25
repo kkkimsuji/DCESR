@@ -1,0 +1,50 @@
+# --- Python & Environment ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+dcesr_env/
+.venv/
+.env
+# 라이브러리 설치 시 생길 수 있는 임시 폴더
+build/
+dist/
+*.egg-info/
+
+# --- Data ---
+# 모든 데이터 폴더의 내용을 무시 (폴더 구조는 유지하고 싶다면 아래처럼 설정)
+data/raw/*
+data/processed/*
+
+# [중요] SampleData.json.gz만 예외적으로 추적 (업로드 허용)
+!data/raw/SampleData.json.gz
+
+# 혹시 모를 대용량/임시 데이터 파일들
+*.pkl
+*.parquet
+*.csv
+*.json
+*.log
+
+# --- Models & Weights ---
+# 학습된 무거운 모델 파일들 제외
+model/*.h5
+model/*.pth
+model/*.ckpt
+model/*.pb
+# 텐서플로우/케라스 체크포인트
+variables/
+assets/
+
+# --- Jupyter Notebook ---
+# 주석으로 처리되어 있던 ipynb 체크포인트 폴더 제외
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- System & IDE ---
+.vscode/
+.idea/
+.DS_Store
+# 윈도우 시스템 파일
+Thumbs.db
+desktop.ini

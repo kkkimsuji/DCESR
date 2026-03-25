@@ -1,0 +1,32 @@
+# Data Paths
+data:
+  input_path: "data/raw/SampleData.json.gz"
+  output_path: "data/processed/processed_data.pkl"
+  train_path: "data/processed/train_data.parquet"
+  val_path: "data/processed/val_data.parquet"
+  test_path: "data/processed/test_data.parquet"
+
+# Model & Training Parameters
+model:
+  # Architecture
+  bart_dim: 768
+  emotion_dim: 7
+  embedding_dim: 256
+  hidden_units: [128, 64, 32]
+  dropout_rate: 0.2
+  
+  # Preprocessing
+  bart_max_length: 1024
+  emotion_max_length: 512
+  
+  # Training Loop
+  batch_size: 128
+  learning_rate: 0.0002
+  epochs: 50
+  patience: 5
+  test_size: 0.2         # 20% for testing
+  val_size: 0.125        # 10% of total (0.125 of the remaining 80%)
+
+# Execution Settings
+device: "cuda"
+model_save_path: "model/dcesr_best_model.h5"
